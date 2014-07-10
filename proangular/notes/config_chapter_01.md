@@ -39,11 +39,11 @@
 
         angularjs/    # contains various .css files
         node_modules/ # created through the local installation of Node packages. 
+        server.js     # does not work within a subdirectory (tried `/code`)
 
- 1. Listing 1-4 does not work as written today (20140709). Following http://stackoverflow.com/a/24347442/621762,must install an extra package:
+ 1. The book's Listing 1-4 does not work as written today (20140709). Following http://stackoverflow.com/a/24347442/621762, one must install an extra package:
 
         npm install serve-static
-
 
    and in addition file `server.js` is rewritten as
 
@@ -55,6 +55,6 @@
         app.use(serveStatic("angularjs"));
         app.listen(5000);
 
-   Note that `"angularjs"` is used as the argument of `serveStatic`, rather than `"../angularjs"` as prescribed. However, this is the only file structure that I find works.
+   Note that `"angularjs"` is used as the argument of `serveStatic`, rather than `"../angularjs"` as prescribed on Stack. However, this is the only file structure that I find works.
 
 [end]
