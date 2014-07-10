@@ -2,7 +2,7 @@
 
  1. Code for the Freeman book is at http://www.apress.com/9781430264484, under the "Source Code/Downloads" tab. I did not see this at first and downloaded the prescribed versions of `angular.js` and `bootstrap.css` etc. from their own sites.
 
- 1. Current versions of code:
+ 1. Am on Mac OS 10.9.4. Node was freshly reinstalled using Homebrew. Current versions of code:
 
         $ npm version
         { http_parser: '1.0',
