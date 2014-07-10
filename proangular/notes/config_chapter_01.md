@@ -39,7 +39,7 @@
 
         angularjs/    # contains various .css files
         node_modules/ # created through the local installation of Node packages. 
-        server.js     # does not work within a subdirectory (tried `/code`)
+        server.js     # does not work within a subdirectory (tried /code)
 
  1. The book's Listing 1-4 does not work as written today (20140709). Following http://stackoverflow.com/a/24347442/621762, one must install an extra package:
 
