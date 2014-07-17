@@ -2,10 +2,12 @@ function doArithmetic(operator) {
   var values = document.getElementById("values");
   var x = document.getElementById('x').value;
   var y = document.getElementById('y').value;
+
   // No empty values.
   if (x === "" || y === "") {
     return false;
   }
+
   // Both values valid.
   else if (validate(x) === true && validate(y) === true) {
     document.getElementById("x").style.backgroundColor="#ffffff";
@@ -20,17 +22,23 @@ function doArithmetic(operator) {
       operator = '-';
       result = x - y;
     }
-    output = '<strong>' + x + '</strong> ' + operator + ' <strong>' + y + '</strong> = <strong>' + result + '</strong>';
     document.getElementById("theForm").reset();
-    document.getElementById("results").innerHTML = output;
+    document.getElementById("x_result").innerHTML = x;
+    document.getElementById("y_result").innerHTML = y;
+    document.getElementById("operator").innerHTML = operator;
+    document.getElementById("result").innerHTML = result;
+    document.getElementsByName("x")[0].placeholder="integer";
+    document.getElementsByName("y")[0].placeholder="integer";
     return false;
   }
+ 
   // X invalid.
   else if (validate(x) === false) {
     document.getElementById("x").style.backgroundColor="#ee4444";
     document.getElementById("x").value="";
     document.getElementsByName("x")[0].placeholder="integer ONLY, please!";
   }
+  
   // Y invalid.
   if (validate(y) === false) {
     document.getElementById("y").style.backgroundColor="#ee4444";

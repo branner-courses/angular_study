@@ -17,7 +17,13 @@
         <input type="submit" onclick="javascript:return this.action=doArithmetic(this.id)" id="minus" value="-">
       </form>
     </div>
-    <div id="results"><br /><strong>X</strong> +/- <strong>Y</strong> = <strong>Z</strong></div><br />
+    <div id="results"><br />
+      <strong><span id="x_result">X</span></strong> 
+      <span id="operator">+/-</span> 
+      <strong><span id="y_result">Y</span></strong> 
+      = 
+      <strong><span id="result">Z</span></strong>
+    </div><br />
   </div>
   <hr>
 </body>
