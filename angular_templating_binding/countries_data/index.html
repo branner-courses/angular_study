@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- David Prager Branner -->
+<!-- 20140719 -->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/countries_data.css" />
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/countries_data.js"></script>
+  <title>Fizz Buzz</title>
+</head>
+<body ng-app="myApp">
+  <h1>Asst. 1.2.6 #3. Challenge Three: Countries Data</h1>
+  <div ng-controller="oneController">
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>1960</th>
+        <th>1970</th>
+        <th>1980</th>
+        <th>1990</th>
+        <th>2000</th>
+        <th>2010</th>
+        <th>% growth, 1960–10</th>
+      </tr>
+      <tr ng-repeat="c in countries | orderBy: 'name'">
+      <td id="name">{{ c.name }}</td>
+      <td>{{ c.1960 | number: 0}}</td>
+      <td>{{ c.1970 | number: 0}}</td>
+      <td>{{ c.1980 | number: 0}}</td>
+      <td>{{ c.1990 | number: 0}}</td>
+      <td>{{ c.2000 | number: 0}}</td>
+      <td>{{ c.2010 | number: 0}}</td>
+      <td>{{ (100*(c.2010-c.1960)/c.1960) | number : 0}}</td>
+    </tr>
+    </table>
+  </div>
+</body>
