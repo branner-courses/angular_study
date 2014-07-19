@@ -1,0 +1,25 @@
+<!-- David Prager Branner -->
+<!-- 20140719 -->
+
+<head>
+  <link rel="canonical" src="css/sorting_months.css" /><
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <title>Sorting Months</title>
+</head>
+<body ng-app="myApp">
+  <h1>Asst. 1.2.6 #1. Challenge One: Sorting Months</h1>
+  <div ng-controller="myCtrl">
+    <table>
+        <tr 
+          ng-repeat="m in months | orderBy: 'ordinal'"
+          ng-class="class='{{ m.season }}'"
+          >
+          <td>
+            <h2>{{ m.english }}</h2>
+            <p>French word: {{ m.french }}</p>
+            <p>Number of Days: {{ m.days }}</p>
+          </td>
+        </tr>
+    </table>
+  </div>
+</body>
