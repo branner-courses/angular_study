@@ -4,6 +4,7 @@ body {
 
 table {
   table-layout: fixed;
+  border-collapse:collapse;
 }
 
 th,#name {
