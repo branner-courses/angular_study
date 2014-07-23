@@ -11,14 +11,45 @@
 <body>
   <table>
     <tr>
-      <td><img src="images/mad-lib-happy-face.png" alt="ngMadLibs Smiley face"></td>
-      <td><img src="images/ng-mad-libs-logo.png" alt="ngMadLibs Logo"></td>
+      <td rowspan="2" id="lefttopcell">
+        <img src="images/mad-lib-happy-face.png" alt="ngMadLibs Smiley face" id="happyface">
+      </td>
+        <td id="righttopcell">
+          <img src="images/ng-mad-libs-logo.png" alt="ngMadLibs Logo" id="logo">
+        </td>
+      <tr>
+        <td id="automatethis">Automate This!</td>
+      </tr>
+    </tr>
+  </table>
+
+  <table class="notopbottomborder">
+    <tr>
+      <td id="provide" colspan="3">Provide the following words:</td>
+    </tr>
+  </table>
+
+  <table class="notopbottomborder">
+    <tr>
+      <td><input type="text" placeholder="Female name" id="female_name"></td>
+      <td><input type="text" placeholder="Dirty task" id="dirty_task"></td>
+      <td><input type="text" placeholder="Obnoxious celebrity" id="obnoxious_celebrity"></td>
     </tr>
     <tr>
-      <td>Provide the following words: (dummy)</td>
+      <td><input type="text" placeholder="Job title" id="job_title"></td>
+      <td><input type="text" placeholder="Celebrity" id="celebrity"></td>
+      <td><input type="text" placeholder="Huge number" id="huge_number"></td>
     </tr>
     <tr>
-      <td>Provide the following words: (dummy)</td>
+      <td><input type="text" placeholder="Tedious task" id="tedious_task"></td>
+      <td class="notopline"><input type="text" placeholder="Useless skill" id="useless_skill"></td>
+      <td class="notopline"><input type="text" placeholder="Adjective" id="adjective"></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td colspan="2">Provide the following words: (dummy)</td>
     </tr>
   </table>
   <script type="text/javascript" src="js/ngMadLibs.js"></script>

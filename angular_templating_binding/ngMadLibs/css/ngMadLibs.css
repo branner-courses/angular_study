@@ -1,9 +1,48 @@
 table {
+  width: 70%;
   table-layout: fixed;
   border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.notopbottomborder {
+  border-top: none;
+  border-bottom: none;
 }
 
 td {
-  border: 1px solid black;
+/*  border: 1px solid black; */
   word-wrap: break-word;
+  text-align: center
+}
+
+#lefttopcell {
+  width: 25%;
+}
+
+#righttopcell {
+  border-bottom: none;
+}
+
+#logo {
+  max-width: 40%;
+}
+
+#happyface {
+  max-width: 40%;
+}
+
+#automatethis {
+  border-top: none;
+  width: 75%;
+  font-size:350%;
+}
+
+#provide {
+  padding: 5%;
+  text-align: left;
+}
+
+input{
+ text-align:center;
 }
