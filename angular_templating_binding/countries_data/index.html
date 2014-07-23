@@ -24,15 +24,15 @@
         <th>2010</th>
         <th>% growth, 1960–10</th>
       </tr>
-      <tr ng-repeat="c in countries | orderBy: 'name'">
-      <td id="name">{{ c.name }}</td>
-      <td>{{ c.1960 | number: 0}}</td>
-      <td>{{ c.1970 | number: 0}}</td>
-      <td>{{ c.1980 | number: 0}}</td>
-      <td>{{ c.1990 | number: 0}}</td>
-      <td>{{ c.2000 | number: 0}}</td>
-      <td>{{ c.2010 | number: 0}}</td>
-      <td>{{ (100*(c.2010-c.1960)/c.1960) | number : 0}}%</td>
+      <tr ng-repeat="country in countries | orderBy: 'name'">
+      <td id="name">{{ country.name }}</td>
+      <td>{{ country.1960 | number: 0}}</td>
+      <td>{{ country.1970 | number: 0}}</td>
+      <td>{{ country.1980 | number: 0}}</td>
+      <td>{{ country.1990 | number: 0}}</td>
+      <td>{{ country.2000 | number: 0}}</td>
+      <td>{{ country.2010 | number: 0}}</td>
+      <td>{{ (100*(country.2010-country.1960)/country.1960) | number : 0}}%</td>
     </tr>
     </table>
   </div>
