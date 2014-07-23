@@ -48,6 +48,11 @@ td {
   padding-bottom: 3%;
 }
 
-input{
- text-align:center;
+input {
+ text-align: center;
+}
+
+#madlib {
+  padding: 3%;
+  text-align: left;
 }
