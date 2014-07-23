@@ -16,13 +16,13 @@
   <div ng-controller="myCtrl">
     <table>
         <tr 
-          ng-repeat="m in months | orderBy: 'ordinal'"
-          ng-class="class='{{ m.season }}'"
+          ng-repeat="month in months | orderBy: 'ordinal'"
+          ng-class="class='{{ month.season }}'"
           >
           <td>
-            <h2>{{ m.english }}</h2>
-            <p>French word: {{ m.french }}<br>
-            Number of Days: {{ m.days }}</p>
+            <h2>{{ month.english }}</h2>
+            <p>French word: {{ month.french }}<br>
+            Number of Days: {{ month.days }}</p>
           </td>
         </tr>
     </table>
