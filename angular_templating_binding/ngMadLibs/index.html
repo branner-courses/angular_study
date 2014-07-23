@@ -1,9 +1,10 @@
 <!-- David Prager Branner -->
 <!-- 20140722 -->
 
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app="">
 <head>
+  <meta charset="UTF-8">
   <title>ngMadLibs</title>
   <link rel="stylesheet" type="text/css" href="css/ngMadLibs.css">
 </head>
@@ -31,19 +32,19 @@
 
   <table class="notopbottomborder">
     <tr>
-      <td><input type="text" placeholder="Female name" id="female_name"></td>
-      <td><input type="text" placeholder="Dirty task" id="dirty_task"></td>
-      <td><input type="text" placeholder="Obnoxious celebrity" id="obnoxious_celebrity"></td>
+      <td><input type="text" placeholder="Female name" ng-init="Female_name='{{Female_name}}'" ng-model="Female_name"></td>
+      <td><input type="text" placeholder="Dirty task" ng-init="Dirty_task='{{Dirty_task}}'" ng-model="Dirty_task"></td>
+      <td><input type="text" placeholder="Obnoxious celebrity" ng-init="Obnoxious_celebrity='{{Obnoxious_celebrity}}'" ng-model="Obnoxious_celebrity"></td>
     </tr>
     <tr>
-      <td><input type="text" placeholder="Job title" id="job_title"></td>
-      <td><input type="text" placeholder="Celebrity" id="celebrity"></td>
-      <td><input type="text" placeholder="Huge number" id="huge_number"></td>
+      <td><input type="text" placeholder="Job title" ng-init="Job_title='{{Job_title}}'" ng-model="Job_title"></td>
+      <td><input type="text" placeholder="Celebrity" ng-init="Celebrity='{{Celebrity}}'" ng-model="Celebrity"></td>
+      <td><input type="text" placeholder="Huge number" ng-init="Huge_number='{{Huge_number}}'" ng-model="Huge_number"></td>
     </tr>
     <tr>
-      <td class="inputs"><input type="text" placeholder="Tedious task" id="tedious_task"></td>
-      <td class="inputs"><input type="text" placeholder="Useless skill" id="useless_skill"></td>
-      <td class="inputs"><input type="text" placeholder="Adjective" id="adjective"></td>
+      <td class="inputs"><input type="text" placeholder="Tedious_task" ng-init="Tedious_task='{{Tedious_task}}'" ng-model="Tedious_task"></td>
+      <td class="inputs"><input type="text" placeholder="Useless skill" ng-init="Useless_skill='{{Useless_skill}}'" ng-model="Useless_skill"></td>
+      <td class="inputs"><input type="text" placeholder="Adjective" ng-init="Adjective='{{Adjective}}'" ng-model="Adjective"></td>
     </tr>
   </table>
 
@@ -51,27 +52,27 @@
     <tr> 
       <td colspan="2" id="madlib">
         <p>
-        <span class="female_name">&#123;&#123;Female name&#125;&#125;</span> was a 
-        <span class="job_title">&#123;&#123;Job title&#125;&#125;</span> who loved technology. Although she loved parts of her job, she absolutely hated 
-        <span class="tedious_task">&#123;&#123;Tedious task&#125;&#125;</span> and 
-        <span class="dirty_task">&#123;&#123;Dirty task&#125;&#125;</span>. So, 
-        <span class="female_name">&#123;&#123;Female_name&#125;&#125;</span> met with her life mentor 
-        <span class="celebrity">&#123;&#123;Celebrity&#125;&#125;</span> who told her to learn how to 
-        <span class="useless_skill">&#123;&#123;Useless skill&#125;&#125;</span> with Thinkful. Thinkful didn't offer a course on 
-        <span class="useless_skill">&#123;&#123;Useless skill&#125;&#125;</span> so she studied programming instead.
+        <span>{{ Female_name }}</span> was a 
+        <span>{{ Job_title }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
+        <span>{{ Tedious_task }}</span> and 
+        <span>{{ Dirty_task }}</span>. So, 
+        <span>{{ Female_name }}</span> met with her life mentor 
+        <span>{{ Celebrity }}</span> who told her to learn how to 
+        <span>{{ Useless_skill }}</span> with Thinkful. Thinkful didn't offer a course on 
+        <span>{{ Useless_skill }}</span> so she studied programming instead.
         </p>
 
         <p>
         What a great decision! With her new skills, 
-        <span class="female_name">&#123;&#123;Female name&#125;&#125;</span> built a(n) 
-        <span class="adjective">&#123;&#123;Adjective&#125;&#125;</span> robot named 
-        <span class="obnoxious_celebrity">&#123;&#123;Obnoxious celebrity&#125;&#125;</span> that not only loved 
-        <span class="dirty_task">&#123;&#123;Dirty task&#125;&#125;</span> but did it 
-        <span class="huge_number">&#123;&#123;Huge number&#125;&#125;</span> faster. 
+        <span>{{ Female_name }}</span> built a(n) 
+        <span>{{ Adjective }}</span> robot named 
+        <span>{{ Obnoxious_celebrity }}</span> that not only loved 
+        <span>{{ Dirty_task }}</span> but did it 
+        <span>{{ Huge_number }}</span> faster. 
         </p>
       </td>
     </tr>
   </table>
-  <script type="text/javascript" src="js/ngMadLibs.js"></script>
+  <script type="text/javascript" src="js/angular.js"></script>
 </body>
 </html>

@@ -56,3 +56,7 @@ input {
   padding: 5%;
   text-align: left;
 }
+
+span {
+  text-decoration: underline;
+}
