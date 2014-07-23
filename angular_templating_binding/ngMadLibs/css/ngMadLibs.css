@@ -18,6 +18,7 @@ td {
 
 #lefttopcell {
   width: 25%;
+  border-right: 1px solid black;
 }
 
 #righttopcell {
@@ -39,8 +40,12 @@ td {
 }
 
 #provide {
-  padding: 5%;
+  padding: 3%;
   text-align: left;
+}
+
+#inputs {
+  padding-bottom: 3%;
 }
 
 input{
