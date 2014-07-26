@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <!-- David Prager Branner -->
-<!-- 20140719 -->
+<!-- 20140726 -->
 
 <html>
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/fizz_buzz.css" />
-  <script type="text/javascript" src="js/angular.js"></script>
-  <script type="text/javascript" src="js/fizz_buzz.js"></script>
   <title>Fizz Buzz</title>
 </head>
 <body ng-app="myApp">
   <h1>Asst. 1.2.6 #2. Challenge Two: Fizz Buzz</h1>
-  <div ng-controller="myCtrl">
-    <div ng-repeat="n in numbers">
-      <p>{{n}}
-        <span ng-if="(n%3==0)">Fizz</span><!--
-        --><span ng-if="(n%5==0)">Buzz</span>
+  <article ng-controller="myCtrl">
+    <section ng-repeat="number in numbers">
+      <p>{{ number }}
+        <span ng-if="(number % 3 == 0)">Fizz</span><!--
+        --><span ng-if="(number % 5 == 0)">Buzz</span>
       </p>
-    </div>
-  </div>  
+    </section>
+  </article>  
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/fizz_buzz.js"></script>
 </body>
+</html>
