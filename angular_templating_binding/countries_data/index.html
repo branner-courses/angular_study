@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <!-- David Prager Branner -->
-<!-- 20140719 -->
+<!-- 20140726 -->
 
 <html>
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/countries_data.css" />
-  <script type="text/javascript" src="js/angular.js"></script>
-  <script type="text/javascript" src="js/countries_data.js"></script>
   <title>Countries Data</title>
 </head>
 <body ng-app="myApp">
   <h1>Asst. 1.2.6 #3. Challenge Three: Countries Data</h1>
-  <div ng-controller="oneController">
-    <table>
-      <tr>
-        <th>Country</th>
-        <th>1960</th>
-        <th>1970</th>
-        <th>1980</th>
-        <th>1990</th>
-        <th>2000</th>
-        <th>2010</th>
-        <th>% growth, 1960–10</th>
-      </tr>
-      <tr ng-repeat="country in countries | orderBy: 'name'">
-      <td id="name">{{ country.name }}</td>
-      <td>{{ country.1960 | number: 0}}</td>
-      <td>{{ country.1970 | number: 0}}</td>
-      <td>{{ country.1980 | number: 0}}</td>
-      <td>{{ country.1990 | number: 0}}</td>
-      <td>{{ country.2000 | number: 0}}</td>
-      <td>{{ country.2010 | number: 0}}</td>
-      <td>{{ (100*(country.2010-country.1960)/country.1960) | number : 0}}%</td>
-    </tr>
+  <article ng-controller="oneController">
+    <table ng-init="years=['1960', '1970', '1980', '1990', '2000', '2010']">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th ng-repeat="year in years">{{ year }} </th>
+          <th>% growth, 1960–10</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="country in countries | orderBy: 'name'">
+          <td id="name">{{ country.name }}</td>
+          <td ng-repeat="year in years">{{ country[year] | number: 0}}</td>
+          <td>{{ (100 * (country[years[years.length-1]] - country[years[0]]) / 
+            country[years[0]]) | number : 0}}%</td>
+        </tr>
+      </tbody>
     </table>
-  </div>
+  </article>
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/countries_data.js"></script>
 </body>
 </html>
