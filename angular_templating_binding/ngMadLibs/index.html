@@ -30,21 +30,25 @@
     </tr>
   </table>
 
-  <table class="notopbottomborder">
+<table class="notopbottomborder"
+    ng-init="replacements=[
+             'Female_name', 'Dirty_task', 'Obnoxious_celebrity', 
+             'Job_title', 'Celebrity', 'Huge_number', 
+             'Tedious_task', 'Useless_skill', 'Adjective']">
     <tr>
-      <td><input type="text" ng-init="Female_name='Female name'" ng-model="Female_name"></td>
-      <td><input type="text" ng-init="Dirty_task='Dirty task'" ng-model="Dirty_task"></td>
-      <td><input type="text" ng-init="Obnoxious_celebrity='Obnoxious celebrity'" ng-model="Obnoxious_celebrity"></td>
+      <td><input type="text" placeholder="{{ replacements[0] }}" ng-model=replacements[0]></td>
+      <td><input type="text" placeholder="{{ replacements[1] }}" ng-model="replacements[1]"></td>
+      <td><input type="text" placeholder="{{ replacements[2] }}" ng-model="replacements[2]"></td>
     </tr>
     <tr>
-      <td><input type="text" ng-init="Job_title='Job title'" ng-model="Job_title"></td>
-      <td><input type="text" ng-init="Celebrity='Celebrity'" ng-model="Celebrity"></td>
-      <td><input type="text" ng-init="Huge_number='Huge number'" ng-model="Huge_number"></td>
+      <td><input type="text" placeholder="{{ replacements[3] }}" ng-model="replacements[3]"></td>
+      <td><input type="text" placeholder="{{ replacements[4] }}" ng-model="replacements[4]"></td>
+      <td><input type="text" placeholder="{{ replacements[5] }}" ng-model="replacements[5]"></td>
     </tr>
     <tr>
-      <td class="inputs"><input type="text" ng-init="Tedious_task='Tedious task'" ng-model="Tedious_task"></td>
-      <td class="inputs"><input type="text" ng-init="Useless_skill='Useless skill'" ng-model="Useless_skill"></td>
-      <td class="inputs"><input type="text" ng-init="Adjective='Adjective'" ng-model="Adjective"></td>
+      <td class="inputs"><input type="text" placeholder="{{ replacements[6] }}" ng-model="replacements[6]"></td>
+      <td class="inputs"><input type="text" placeholder="{{ replacements[7] }}" ng-model="replacements[7]"></td>
+      <td class="inputs"><input type="text" placeholder="{{ replacements[8] }}" ng-model="replacements[8]"></td>
     </tr>
   </table>
 
@@ -52,27 +56,28 @@
     <tr> 
       <td colspan="2" id="madlib">
         <p>
-        <span>{{ Female_name }}</span> was a 
-        <span>{{ Job_title }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
-        <span>{{ Tedious_task }}</span> and 
-        <span>{{ Dirty_task }}</span>. So 
-        <span>{{ Female_name }}</span> met with her life mentor 
-        <span>{{ Celebrity }}</span> who told her to learn how to 
-        <span>{{ Useless_skill }}</span> with Thinkful. Thinkful didn't offer a course on 
-        <span>{{ Useless_skill }}</span> so she studied programming instead.
+        <span>{{ replacements[0] }}</span> was a 
+        <span>{{ replacements[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
+        <span>{{ replacements[6] }}</span> and 
+        <span>{{ replacements[1] }}</span>. So 
+        <span>{{ replacements[0] }}</span> met with her life mentor 
+        <span>{{ replacements[4] }}</span> who told her to learn how to 
+        <span>{{ replacements[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
+        <span>{{ replacements[7] }}</span> so she studied programming instead.
         </p>
 
         <p>
         What a great decision! With her new skills, 
-        <span>{{ Female_name }}</span> built a(n) 
-        <span>{{ Adjective }}</span> robot named 
-        <span>{{ Obnoxious_celebrity }}</span> that not only loved 
-        <span>{{ Dirty_task }}</span> but did it 
-        <span>{{ Huge_number }}</span> faster. 
+        <span>{{ replacements[0] }}</span> built a(n) 
+        <span>{{ replacements[8] }}</span> robot named 
+        <span>{{ replacements[2] }}</span> that not only loved 
+        <span>{{ replacements[1] }}</span> but did it 
+        <span>{{ replacements[5] }}</span> faster. 
         </p>
       </td>
     </tr>
   </table>
+<!--  <script type="text/javascript" src="js/ngMadLibs.js"></script> -->
   <script type="text/javascript" src="js/angular.js"></script>
 </body>
 </html>
