@@ -1,7 +1,11 @@
 // David Prager Branner
 // 20140727
 
-angular.module('myApp', []).
+;(function IIFE(window, document, undefined) {
+  angular.module('myApp', []);
+}(window, document));
+
+angular.module('myApp').
   controller('DisplayCtrl', function($scope) {
     $scope.$on('displayData', function(event, data) {
       $scope.content = data;
