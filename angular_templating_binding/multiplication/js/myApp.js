@@ -2,6 +2,11 @@
 // 20140727
 
 ;(function IIFE(window, document, undefined) {
+  // Variables
+  var numbers,
+      activeFactorA, 
+      activeFactorB;
+  // Main loop
   angular.module('myApp', []);
 }(window, document));
 
@@ -13,7 +18,7 @@ angular.module('myApp').
   }).
   controller('MultiplicationCtrl', function($scope, $attrs, $rootScope) {
     function populateNumbers(limit) {
-      var numbers = [];
+      numbers = [];
       for (var i=0 ; i<limit ; i++) {
         numbers[i] = i + 1;
       }
@@ -29,7 +34,6 @@ angular.module('myApp').
     });
 
     $scope.numberLimit = $attrs.initialNumberLimit || 10;
-    var activeFactorA, activeFactorB;
 
     $scope.setActiveFactors = function(a, b) {
       activeFactorA = a;
