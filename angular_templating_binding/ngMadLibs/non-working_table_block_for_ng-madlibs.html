@@ -5,17 +5,17 @@
              'Tedious_task', 'Useless_skill', 'Adjective']">
     <tr>
       <td ng-repeat="replacement in replacements | limitTo: 3">
-        <input type="text" placeholder="{{ replacement }}" ng-model=replacement>
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
       </td>
     </tr>
     <tr>
       <td ng-repeat="replacement in replacements | limitTo: 6 | limitTo: -3">
-        <input type="text" placeholder="{{ replacement }}" ng-model=replacement>
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
       </td>
     </tr>
     <tr>
       <td ng-repeat="replacement in replacements | limitTo: -3" class="inputs">
-        <input type="text" placeholder="{{ replacement }}" ng-model=replacement>
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
       </td>
     </tr>
   </table>
