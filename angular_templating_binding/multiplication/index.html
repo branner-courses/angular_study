@@ -6,6 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Multiplication Table</title>
+  <link rel="stylesheet" href="css/multiplication.css">
 </head>
 
 <body>
@@ -15,7 +16,10 @@
     <table>
       <tbody>
         <tr ng-repeat="numberA in numbers">
-          <td ng-repeat="numberB in numbers">
+          <td ng-repeat="numberB in numbers"
+            ng-mouseleave="clearActiveFactors()"
+            ng-mouseover="setActiveFactors(numberA, numberB)"
+            ng-class="{hover: matchesFactor(numberA, numberB)}">
             {{ compute(numberA, numberB) }}
           </td>
         </tr>
