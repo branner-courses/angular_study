@@ -7,7 +7,12 @@ angular.module('myApp', []).
       }
       return numbers;
     }
+    $scope.compute = function(a, b) {
+      return a * b;
+    };
+    $scope.$watch('numberLimit', function(limit) {
+      $scope.numbers = populateNumbers($scope.numberLimit);
+    });
     $scope.numberLimit = $attrs.initialNumberLimit || 10;
-    $scope.numbers = populateNumbers($scope.numberLimit);
   });
 

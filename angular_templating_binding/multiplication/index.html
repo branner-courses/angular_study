@@ -9,15 +9,19 @@
 </head>
 
 <body>
-  <table ng-controller="MultiplicationCtrl" initial-number-limit="10">
-    <tbody>
-      <tr ng-repeat="numberA in numbers">
-        <td ng-repeat="numberB in numbers">
-          {{ numberA * numberB }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <section ng-controller="MultiplicationCtrl" initial-number-limit="10">
+    <input type="number" ng-model="numberLimit" placeholder="Enter a number"
+        required autocomplete="off"/>
+    <table>
+      <tbody>
+        <tr ng-repeat="numberA in numbers">
+          <td ng-repeat="numberB in numbers">
+            {{ compute(numberA, numberB) }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
   <script src="js/myApp.js"></script>
