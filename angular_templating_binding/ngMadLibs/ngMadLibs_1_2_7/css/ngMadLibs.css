@@ -1,0 +1,62 @@
+table {
+  width: 70%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.notopbottomborder {
+  border-top: none;
+  border-bottom: none;
+}
+
+td {
+/*  border: 1px solid black; */
+  word-wrap: break-word;
+  text-align: center
+}
+
+#lefttopcell {
+  width: 25%;
+  border-right: 1px solid black;
+}
+
+#righttopcell {
+  border-bottom: none;
+}
+
+#logo {
+  max-width: 40%;
+}
+
+#happyface {
+  max-width: 40%;
+}
+
+#automatethis {
+  border-top: none;
+  width: 75%;
+  font-size:350%;
+}
+
+#provide {
+  padding: 5%;
+  text-align: left;
+}
+
+.inputs {
+  padding-bottom: 3%;
+}
+
+input {
+ text-align: center;
+}
+
+#madlib {
+  padding: 5%;
+  text-align: left;
+}
+
+span {
+  text-decoration: underline;
+}
