@@ -49,16 +49,18 @@ angular.module('ngMadLibs', []).
       // no element of $scope.userReplmnts can be the same as origReplmnts
       else {
         for (var i=0 ; i<origReplmnts.length ; i++) {
+          console.log(i, $scope.userReplmnts[i]);
           if ($scope.userReplmnts[i] === origReplmnts[i]) {
             alert('"' + origReplmnts[i] + '" must be changed.');
             return false;
           }
-          if (!$scope.userReplmnts[i]) {
+          else if (!$scope.userReplmnts[i]) {
             alert('"' + origReplmnts[i] + '" seems to be empty.');
             // Restore original placeholder.
             $scope.userReplmnts[i] = origReplmnts[i];
             return false;
           }
+          continue;
         return true;
         }
       }
