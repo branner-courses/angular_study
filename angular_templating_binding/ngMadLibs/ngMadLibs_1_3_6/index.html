@@ -10,71 +10,99 @@
 </head>
 
 <body ng-controller="Replacements">
-  <table>
-    <tr>
-      <td rowspan="2" id="lefttopcell">
-        <img src="images/mad-lib-happy-face.png" alt="ngMadLibs Smiley face" id="happyface">
-      </td>
-        <td id="righttopcell">
-          <img src="images/ng-mad-libs-logo.png" alt="ngMadLibs Logo" id="logo">
-        </td>
-      <tr>
-        <td id="automatethis">Automate This!</td>
-      </tr>
-    </tr>
-  </table>
+  <header>
+    <table>
+      <tbody>
+        <tr>
+          <td rowspan="2" id="lefttopcell">
+            <img src="images/mad-lib-happy-face.png" 
+                 alt="ngMadLibs Smiley face" id="happyface">
+          </td>
+            <td id="righttopcell">
+              <img src="images/ng-mad-libs-logo.png" 
+                   alt="ngMadLibs Logo" id="logo">
+            </td>
+          <tr>
+            <td id="automatethis">Automate This!</td>
+          </tr>
+        </tr>
+      </tbody>
+    </table>
+  </header>
 
-  <section ng-show="user_input">
+  <section ng-show="userInput">
     <table class="notopbottomborder">
       <tr>
         <td id="provide" colspan="3">Provide the following words:</td>
       </tr>
     </table>
-    <table class="notopborder">
-      <tr>
-        <td><input type="text" placeholder="{{ replacements[0] }}" ng-model=replacements[0]></td>
-        <td><input type="text" placeholder="{{ replacements[1] }}" ng-model="replacements[1]"></td>
-        <td><input type="text" placeholder="{{ replacements[2] }}" ng-model="replacements[2]"></td>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="{{ replacements[3] }}" ng-model="replacements[3]"></td>
-        <td><input type="text" placeholder="{{ replacements[4] }}" ng-model="replacements[4]"></td>
-        <td><input type="text" placeholder="{{ replacements[5] }}" ng-model="replacements[5]"></td>
-      </tr>
-      <tr>
-        <td class="inputs"><input type="text" placeholder="{{ replacements[6] }}" ng-model="replacements[6]"></td>
-        <td class="inputs"><input type="text" placeholder="{{ replacements[7] }}" ng-model="replacements[7]"></td>
-        <td class="inputs"><input type="text" placeholder="{{ replacements[8] }}" ng-model="replacements[8]"></td>
-      </tr>
+    <table class="notopbottomborder">
+      <tbody>
+        <tr>
+          <td><input type="text" placeholder="{{ userReplmnts[0] }}" ng-model=userReplmnts[0]></td>
+          <td><input type="text" placeholder="{{ userReplmnts[1] }}" ng-model="userReplmnts[1]"></td>
+          <td><input type="text" placeholder="{{ userReplmnts[2] }}" ng-model="userReplmnts[2]"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="{{ userReplmnts[3] }}" ng-model="userReplmnts[3]"></td>
+          <td><input type="text" placeholder="{{ userReplmnts[4] }}" ng-model="userReplmnts[4]"></td>
+          <td><input type="text" placeholder="{{ userReplmnts[5] }}" ng-model="userReplmnts[5]"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="{{ userReplmnts[6] }}" ng-model="userReplmnts[6]"></td>
+          <td><input type="text" placeholder="{{ userReplmnts[7] }}" ng-model="userReplmnts[7]"></td>
+          <td><input type="text" placeholder="{{ userReplmnts[8] }}" ng-model="userReplmnts[8]"></td>
+        </tr>
+      </tbody>
     </table>
   </section>
 
-  <section ng-show="!user_input">
-    <table class="notopborder">
-      <tr> 
-        <td colspan="2" id="madlib">
-          <p>
-          <span>{{ replacements[0] }}</span> was a 
-          <span>{{ replacements[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
-          <span>{{ replacements[6] }}</span> and 
-          <span>{{ replacements[1] }}</span>. So 
-          <span>{{ replacements[0] }}</span> met with her life mentor 
-          <span>{{ replacements[4] }}</span> who told her to learn how to 
-          <span>{{ replacements[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
-          <span>{{ replacements[7] }}</span> so she studied programming instead.
-          </p>
-          <p>
-          What a great decision! With her new skills, 
-          <span>{{ replacements[0] }}</span> built a(n) 
-          <span>{{ replacements[8] }}</span> robot named 
-          <span>{{ replacements[2] }}</span> that not only loved 
-          <span>{{ replacements[1] }}</span> but did it 
-          <span>{{ replacements[5] }}</span> faster. 
-          </p>
-        </td>
-      </tr>
+  <section ng-show="!userInput">
+    <table class="notopbottomborder">
+      <tbody>
+        <tr> 
+          <td colspan="2" id="madlib">
+            <p>
+            <span>{{ userReplmnts[0] }}</span> was a 
+            <span>{{ userReplmnts[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
+            <span>{{ userReplmnts[6] }}</span> and 
+            <span>{{ userReplmnts[1] }}</span>. So 
+            <span>{{ userReplmnts[0] }}</span> met with her life mentor 
+            <span>{{ userReplmnts[4] }}</span> who told her to learn how to 
+            <span>{{ userReplmnts[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
+            <span>{{ userReplmnts[7] }}</span> so she studied programming instead.
+            </p>
+            <p>
+            What a great decision! With her new skills, 
+            <span>{{ userReplmnts[0] }}</span> built a(n) 
+            <span>{{ userReplmnts[8] }}</span> robot named 
+            <span>{{ userReplmnts[2] }}</span> that not only loved 
+            <span>{{ userReplmnts[1] }}</span> but did it 
+            <span>{{ userReplmnts[5] }}</span> times faster. 
+            </p>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </section>
+
+  <footer>
+    <table class="notopborder">
+      <tbody>
+        <tr>
+          <td id="button">
+            <button ng-show="userInput" ng-click="generateMadLib()" type="button">
+              Generate My MadLib!
+            </button>
+            <button ng-show="!userInput" ng-click="resetMadLib()" type="button">
+              Start Over
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </footer>
+
   <script src="js/angular.js"></script>
   <script src="js/ngMadLibs.js"></script>
 </body>

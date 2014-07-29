@@ -48,9 +48,9 @@ td {
   text-align: left;
 }
 
-.inputs {
+/* .inputs {
   padding-bottom: 3%;
-}
+} */
 
 input {
  text-align: center;
@@ -63,4 +63,12 @@ input {
 
 span {
   text-decoration: underline;
+}
+
+#button {
+  text-align: right;
+}
+
+button {
+  margin: 20px;
 }
