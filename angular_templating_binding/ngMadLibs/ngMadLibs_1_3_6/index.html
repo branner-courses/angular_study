@@ -1,5 +1,5 @@
 <!-- David Prager Branner -->
-<!-- 20140727 -->
+<!-- 20140728 -->
 
 <!doctype html>
 <html lang="en" ng-app="ngMadLibs">
@@ -24,55 +24,57 @@
     </tr>
   </table>
 
-  <table class="notopbottomborder">
-    <tr>
-      <td id="provide" colspan="3">Provide the following words:</td>
-    </tr>
-  </table>
+  <section ng-show="user_input">
+    <table class="notopbottomborder">
+      <tr>
+        <td id="provide" colspan="3">Provide the following words:</td>
+      </tr>
+    </table>
+    <table class="notopborder">
+      <tr>
+        <td><input type="text" placeholder="{{ replacements[0] }}" ng-model=replacements[0]></td>
+        <td><input type="text" placeholder="{{ replacements[1] }}" ng-model="replacements[1]"></td>
+        <td><input type="text" placeholder="{{ replacements[2] }}" ng-model="replacements[2]"></td>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="{{ replacements[3] }}" ng-model="replacements[3]"></td>
+        <td><input type="text" placeholder="{{ replacements[4] }}" ng-model="replacements[4]"></td>
+        <td><input type="text" placeholder="{{ replacements[5] }}" ng-model="replacements[5]"></td>
+      </tr>
+      <tr>
+        <td class="inputs"><input type="text" placeholder="{{ replacements[6] }}" ng-model="replacements[6]"></td>
+        <td class="inputs"><input type="text" placeholder="{{ replacements[7] }}" ng-model="replacements[7]"></td>
+        <td class="inputs"><input type="text" placeholder="{{ replacements[8] }}" ng-model="replacements[8]"></td>
+      </tr>
+    </table>
+  </section>
 
-  <table class="notopbottomborder">
-    <tr>
-      <td><input type="text" placeholder="{{ replacements[0] }}" ng-model=replacements[0]></td>
-      <td><input type="text" placeholder="{{ replacements[1] }}" ng-model="replacements[1]"></td>
-      <td><input type="text" placeholder="{{ replacements[2] }}" ng-model="replacements[2]"></td>
-    </tr>
-    <tr>
-      <td><input type="text" placeholder="{{ replacements[3] }}" ng-model="replacements[3]"></td>
-      <td><input type="text" placeholder="{{ replacements[4] }}" ng-model="replacements[4]"></td>
-      <td><input type="text" placeholder="{{ replacements[5] }}" ng-model="replacements[5]"></td>
-    </tr>
-    <tr>
-      <td class="inputs"><input type="text" placeholder="{{ replacements[6] }}" ng-model="replacements[6]"></td>
-      <td class="inputs"><input type="text" placeholder="{{ replacements[7] }}" ng-model="replacements[7]"></td>
-      <td class="inputs"><input type="text" placeholder="{{ replacements[8] }}" ng-model="replacements[8]"></td>
-    </tr>
-  </table>
-
-  <table>
-    <tr> 
-      <td colspan="2" id="madlib">
-        <p>
-        <span>{{ replacements[0] }}</span> was a 
-        <span>{{ replacements[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
-        <span>{{ replacements[6] }}</span> and 
-        <span>{{ replacements[1] }}</span>. So 
-        <span>{{ replacements[0] }}</span> met with her life mentor 
-        <span>{{ replacements[4] }}</span> who told her to learn how to 
-        <span>{{ replacements[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
-        <span>{{ replacements[7] }}</span> so she studied programming instead.
-        </p>
-
-        <p>
-        What a great decision! With her new skills, 
-        <span>{{ replacements[0] }}</span> built a(n) 
-        <span>{{ replacements[8] }}</span> robot named 
-        <span>{{ replacements[2] }}</span> that not only loved 
-        <span>{{ replacements[1] }}</span> but did it 
-        <span>{{ replacements[5] }}</span> faster. 
-        </p>
-      </td>
-    </tr>
-  </table>
+  <section ng-show="!user_input">
+    <table class="notopborder">
+      <tr> 
+        <td colspan="2" id="madlib">
+          <p>
+          <span>{{ replacements[0] }}</span> was a 
+          <span>{{ replacements[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
+          <span>{{ replacements[6] }}</span> and 
+          <span>{{ replacements[1] }}</span>. So 
+          <span>{{ replacements[0] }}</span> met with her life mentor 
+          <span>{{ replacements[4] }}</span> who told her to learn how to 
+          <span>{{ replacements[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
+          <span>{{ replacements[7] }}</span> so she studied programming instead.
+          </p>
+          <p>
+          What a great decision! With her new skills, 
+          <span>{{ replacements[0] }}</span> built a(n) 
+          <span>{{ replacements[8] }}</span> robot named 
+          <span>{{ replacements[2] }}</span> that not only loved 
+          <span>{{ replacements[1] }}</span> but did it 
+          <span>{{ replacements[5] }}</span> faster. 
+          </p>
+        </td>
+      </tr>
+    </table>
+  </section>
   <script src="js/angular.js"></script>
   <script src="js/ngMadLibs.js"></script>
 </body>

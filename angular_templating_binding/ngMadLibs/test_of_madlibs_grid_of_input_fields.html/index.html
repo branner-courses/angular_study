@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" ng-app="ngMadLibs">
+<head>
+  <meta charset="UTF-8">
+  <title>ngMadLibs</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+
+
+<body ng:controller="Replacements">
+  <input ng-repeat="item in replacements" type="text" placeholder="{{ $index  }}, {{ item }}" ng-model=item>
+  <!-- It seems that <br> only shows after all <input>s are done. -->
+  <br ng-show="($index + 1) % 3 === 0" />
+  <script src="angular.js"></script>
+  <script src="test.js"></script>
+</body>

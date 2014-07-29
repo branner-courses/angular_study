@@ -5,6 +5,10 @@ table {
   border: 1px solid black;
 }
 
+.notopborder {
+  border-top: none;
+}
+
 .notopbottomborder {
   border-top: none;
   border-bottom: none;
