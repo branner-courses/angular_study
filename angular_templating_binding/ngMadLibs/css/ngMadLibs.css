@@ -5,6 +5,10 @@ table {
   border: 1px solid black;
 }
 
+.notopborder {
+  border-top: none;
+}
+
 .notopbottomborder {
   border-top: none;
   border-bottom: none;
@@ -44,9 +48,9 @@ td {
   text-align: left;
 }
 
-.inputs {
+/* .inputs {
   padding-bottom: 3%;
-}
+} */
 
 input {
  text-align: center;
@@ -59,4 +63,12 @@ input {
 
 span {
   text-decoration: underline;
+}
+
+#button {
+  text-align: right;
+}
+
+button {
+  margin: 20px;
 }
