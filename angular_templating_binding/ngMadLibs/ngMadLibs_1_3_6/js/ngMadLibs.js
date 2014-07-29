@@ -60,9 +60,8 @@ angular.module('ngMadLibs', []).
             $scope.userReplmnts[i] = origReplmnts[i];
             return false;
           }
-          continue;
-        return true;
         }
+      return true;
       }
     };
   });
