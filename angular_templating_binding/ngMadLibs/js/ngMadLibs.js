@@ -1,16 +1,5 @@
 // David Prager Branner
-// 20140728
-
-;(function IIFE(window, document, undefined) {
-  // Variables
-  var origReplmnts;
-
-  // Main loop
-  document.addEventListener('DOMContentLoaded', function(){
-    'use strict';
-    angular.module('myApp', []);
-  });
-}(window, document));
+// 20140730
 
 angular.module('ngMadLibs', []).
   controller('Replacements', function($scope) {
