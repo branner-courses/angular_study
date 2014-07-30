@@ -1,0 +1,47 @@
+<table class="notopbottomborder"
+    ng-init="replacements=[
+             'Female_name', 'Dirty_task', 'Obnoxious_celebrity', 
+             'Job_title', 'Celebrity', 'Huge_number', 
+             'Tedious_task', 'Useless_skill', 'Adjective']">
+    <tr>
+      <td ng-repeat="replacement in replacements | limitTo: 3">
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
+      </td>
+    </tr>
+    <tr>
+      <td ng-repeat="replacement in replacements | limitTo: 6 | limitTo: -3">
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
+      </td>
+    </tr>
+    <tr>
+      <td ng-repeat="replacement in replacements | limitTo: -3" class="inputs">
+        <input type="text" placeholder="{{ replacement }}" ng-model="replacement">
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr> 
+      <td colspan="2" id="madlib">
+        <p>
+        <span>{{ replacements[0] }}</span> was a 
+        <span>{{ replacements[3] }}</span> who loved technology. Although she loved parts of her job, she absolutely hated 
+        <span>{{ replacements[6] }}</span> and 
+        <span>{{ replacements[1] }}</span>. So 
+        <span>{{ replacements[0] }}</span> met with her life mentor 
+        <span>{{ replacements[4] }}</span> who told her to learn how to 
+        <span>{{ replacements[7] }}</span> with Thinkful. Thinkful didn't offer a course on 
+        <span>{{ replacements[7] }}</span> so she studied programming instead.
+        </p>
+
+        <p>
+        What a great decision! With her new skills, 
+        <span>{{ replacements[0] }}</span> built a(n) 
+        <span>{{ replacements[8] }}</span> robot named 
+        <span>{{ replacements[2] }}</span> that not only loved 
+        <span>{{ replacements[1] }}</span> but did it 
+        <span>{{ replacements[5] }}</span> faster. 
+        </p>
+      </td>
+    </tr>
+  </table>
