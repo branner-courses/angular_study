@@ -1,0 +1,49 @@
+/* David Prager Branner */
+/* 20140802 */
+
+.container {
+  display: table;
+}
+
+
+.rowlike:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.rowlike {
+  display: table-row;
+}
+
+.celllike {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#happyface {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.boxed {
+/*  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; */
+  border: 1px solid black;
+}
+
+#automatethis {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 300%;
+}
