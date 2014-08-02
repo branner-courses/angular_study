@@ -1,5 +1,5 @@
 <!-- David Prager Branner -->
-<!-- 20140731 -->
+<!-- 20140802 -->
 
 <!doctype html>
 <html lang="en" ng-app="ngMadLibs">
@@ -26,6 +26,42 @@
     </div>
   </header>
 
+  <section ng-show="userInput" class="container boxed">
+    <div class="rowlike">
+      <div id="provide" class="celllike">
+        <ul>
+          <li>
+          <input ng-repeat="item in origReplmnts"
+                type="{{ item.type }}" placeholder="{{ item.placeholder }}" 
+                ng-model=item.name required>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rowlike">
+      <div class="celllike button">
+        <button ng-show="userInput" ng-click="generateMadLib()" type="button">
+          Generate My MadLib!
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section ng-show="!userInput" class="container boxed">
+    <div class="rowlike">
+      <div id="madlib" class="celllike">
+      </div>
+    </div>
+
+    <div class="rowlike">
+      <div class="celllike button">
+        <button ng-show="!userInput" ng-click="resetMadLib()" type="button">
+          Start Over
+        </button>
+      </div>
+    </div>
+  </section>
 
   <script src="js/angular.js"></script>
   <script src="js/ngMadLibs.js"></script>

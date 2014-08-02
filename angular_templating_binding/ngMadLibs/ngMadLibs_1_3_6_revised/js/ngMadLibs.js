@@ -1,11 +1,21 @@
 // David Prager Branner
-// 20140730
+// 20140802
 
 angular.module('ngMadLibs', []).
   controller('Replacements', function($scope) {
+    $scope.origReplmnts = [
+      {name: 'Female_name', placeholder: 'Female name', type:'text'}, 
+      {name: 'Dirty_task', placeholder: 'Dirty task', type:'text'}, 
+      {name: 'Obnoxious_celebrity', placeholder: 'Obnoxious celebrity', type:'text'}, 
+      {name: 'Job_title', placeholder: 'Job title', type:'text'},   
+      {name: 'Celebrity', placeholder: 'Celebrity', type:'text'}, 
+      {name: 'Huge_number', placeholder: 'Huge number', type:'number'}, 
+      {name: 'Tedious_task', placeholder: 'Tedious task', type:'text'}, 
+      {name: 'Useless_skill', placeholder: 'Useless skill', type:'text'}, 
+      {name: 'Adjective', placeholder: 'Adjective', type:'text'}];
 
     $scope.reset_userReplmnts = function() {
-      $scope.userReplmnts = origReplmnts.slice();
+      $scope.userReplmnts = $scope.origReplmnts.slice();
     };
 
     $scope.userInput = true;
@@ -30,23 +40,23 @@ angular.module('ngMadLibs', []).
       console.log('$scope.userReplmnts: ' + $scope.userReplmnts);
       // userReplmnts[5] must be number
       if (isNaN($scope.userReplmnts[5])) {
-        alert('"' + origReplmnts[5] + '" must be a number.');
+        alert('"' + $scope.origReplmnts[5] + '" must be a number.');
         // Restore original placeholder.
-        $scope.userReplmnts[5] = origReplmnts[5];
+        $scope.userReplmnts[5] = $scope.origReplmnts[5];
         return false;
       }
       // no element of $scope.userReplmnts can be the same as origReplmnts
       else {
-        for (var i=0 ; i<origReplmnts.length ; i++) {
+        for (var i=0 ; i<$scope.origReplmnts.length ; i++) {
           console.log(i, $scope.userReplmnts[i]);
-          if ($scope.userReplmnts[i] === origReplmnts[i]) {
-            alert('"' + origReplmnts[i] + '" must be changed.');
+          if ($scope.userReplmnts[i] === $scope.origReplmnts[i]) {
+            alert('"' + $scope.origReplmnts[i] + '" must be changed.');
             return false;
           }
           else if (!$scope.userReplmnts[i]) {
-            alert('"' + origReplmnts[i] + '" seems to be empty.');
+            alert('"' + $scope.origReplmnts[i] + '" seems to be empty.');
             // Restore original placeholder.
-            $scope.userReplmnts[i] = origReplmnts[i];
+            $scope.userReplmnts[i] = $scope.origReplmnts[i];
             return false;
           }
         }
@@ -55,7 +65,3 @@ angular.module('ngMadLibs', []).
     };
   });
 
-origReplmnts = [
-   'Female_name', 'Dirty_task', 'Obnoxious_celebrity', 'Job_title', 
-   'Celebrity', 'Huge_number', 'Tedious_task', 'Useless_skill', 
-   'Adjective'];

@@ -2,7 +2,10 @@
 /* 20140802 */
 
 .container {
+  width: 75%;
   display: table;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
 
@@ -22,23 +25,16 @@
   vertical-align: middle;
 }
 
+img {
+  display: block;
+  margin: 0 auto;
+}
+
 #happyface {
   width: 40%;
-  display: block;
-  margin: 0 auto;
 }
-
-
-#logo {
-  display: block;
-  margin: 0 auto;
-}
-
 
 .boxed {
-/*  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; */
   border: 1px solid black;
 }
 
@@ -46,4 +42,34 @@
   text-align: center;
   margin: 0 auto;
   font-size: 300%;
+}
+
+ul:before {
+  content: '';
+  display: block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+ul {
+  display: block;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+button {
+  float: right;
+  clear: both;
+}
+
+input {
+  text-align: center;
+  margin: 0 10px;
 }
