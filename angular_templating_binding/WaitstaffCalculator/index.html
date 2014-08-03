@@ -1,74 +1,97 @@
+<!-- David Prager Branner -->
+<!-- 20140804 -->
+
 <!doctype html>
-<html>
+<html lang="en" ng-app="waitStaff">
 <head>
   <meta charset="utf-8">
   <title> Waitstaff Calculator</title>
   <link rel="stylesheet" href="css/waitstaff.css" />
 </head>
 
-<body>
+<body ng-controller="Calculator">
   <header>
     <h1>Waitstaff Calculator</h1>
   </header>
 
-  <section>
-    <table>
-      <tbody>
-        <tr>
-          <td class="boxed" rowspan="2">
-            <span class="heading">
-              Enter the Meal Details
-            </span><br />
-            <hr>
-            <p><label>Base Meal Price: $</label>
-            <input type="text" size="6"><br />
-            <label>Tax Rate: %</label>
-            <input type="text" size="2"><br />
-            <label>Tip Percentage: %</label>
-            <input type="text" size="2"></p>
-            <p><span class="buttons">
-              <button type="button">Submit</button>
-              <button type="button">Cancel</button>
-            </span></p>
-          </td>
-          <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td class="boxed">
-                    <span class="heading">
-                      Customer Charges
-                    </span><br />
-                    <hr>
-                    <label>Subtotal</label><br />
-                    <label>Tip</label><br />
-                    <hr>
-                    <label>Total</label></td>
-                </tr>
-                <tr>
-                  <td class="boxed">
-                    <span class="heading">
-                      My Earnings Info
-                    </span><br />
-                    <hr>
-                    <label>Tip Total:</label><br />
-                    <label>Meal count:</label><br />
-                    <label>Average Tip Per Meal:</label></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <span class="buttons">
-              <button type="button">Reset</button>
+  <section class="container">
+    <div class="rowlike">
+      <div class="celllike boxed left">
+        <span class="heading">
+          Enter the Meal Details
+        </span><br />
+        <hr>
+        <form id="enteredDataForm" novalidate>
+          <p><label>Base Meal Price: $</label>
+          <input type="number" size="6" 
+                 ng-model="baseMealPrice"
+                 required /><br />
+          <label>Tax Rate: %</label>
+          <input type="number" size="2" 
+                 ng-model="taxRate"
+                 required /><br />
+          <label>Tip Percentage: %</label>
+          <input type="number" size="2" 
+                 ng-model="tipPc"
+                 required /></p>
+          <p>
+            <span class="buttons"> 
+              <button type="submit" id="submit"
+                      ng-click="updateResult()"
+                      ng-disabled="!baseMealPrice || !taxRate || !tipPc">
+               Submit 
+              </button>
+              <button type="submit" id="cancel"
+                      ng-click="cancel()">
+                Cancel<br/><span class="tiny">(reset current input)</span>
+              </button>
             </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </footer>
+          </p>
+        </form>
+      </div>
+
+      <div class="celllike">
+        <div class="container right">
+          <div class="rowlike">
+            <div class="celllike boxed">
+              <span class="heading">
+                Customer Charges
+              </span><br />
+              <hr>
+              <label>Subtotal</label>&nbsp;{{ custmrSubtotal | currency }}<br />
+              <label>Tip</label>&nbsp;{{ custmrTip | currency }}<br />
+              <hr>
+              <label>Total</label>&nbsp;{{ custmrTotal | currency }}
+            </div>
+          </div>
+
+          <div class="rowlike"></div>
+
+          <div class="rowlike">
+            <div class="celllike boxed">
+              <span class="heading">
+                My Earnings Info
+              </span><br />
+              <hr>
+              <label>Tip Total: </label>&nbsp;{{ tipTotal | currency }}<br />
+              <label>Meal count: </label>&nbsp;{{ mealCount }}<br />
+              <label>Average Tip Per Meal: </label>&nbsp;{{ avgTip | currency }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rowlike">
+      <div class="celllike"></div>
+      <div class="rowlike buttons">
+        <span>
+          <button type="button" id="reset" ng-click="reset()">Reset</button>
+        </span>
+      </div>
+    </div>
+  </section>
+
   <script src="js/angular.js"></script>
   <script src="js/waistaff.js"></script>
 </body>
