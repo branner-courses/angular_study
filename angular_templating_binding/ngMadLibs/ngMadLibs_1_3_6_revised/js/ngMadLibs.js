@@ -25,7 +25,7 @@ angular.module('ngMadLibs', []).
         subject: 'she', possessive: 'her', object: 'her'
       },
     };
-    $scope.pronoun = $scope.pronouns.unknown;
+    $scope.chosenPronoun = $scope.pronouns.unknown;
 
     $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = $scope.origReplmnts.slice();
@@ -39,7 +39,6 @@ angular.module('ngMadLibs', []).
       $scope.submitted = true;
       if ($scope.validate($scope.userReplments)) {
         $scope.userInput = false; 
-        alert($scope.userReplmnts[1].name);
       }
     };
 
@@ -49,7 +48,6 @@ angular.module('ngMadLibs', []).
     };
 
     $scope.validate = function() {
-      alert('here');
       for (var i=0 ; i<$scope.userReplmnts.length ; i++) {
         if ($scope.userReplmnts[i].$pristine) {
           alert($scope.item + '" must be changed.');
