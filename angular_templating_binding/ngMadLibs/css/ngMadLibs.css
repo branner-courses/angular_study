@@ -1,72 +1,75 @@
 /* David Prager Branner */
-/* 20140728 */
+/* 20140802 */
 
-table {
-  width: 70%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  border: 1px solid black;
+.container {
+  width: 75%;
+  display: table;
+  margin-left: auto ;
+  margin-right: auto ;
 }
 
-.notopborder {
-  border-top: none;
+
+.rowlike:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
-.notopbottomborder {
-  border-top: none;
-  border-bottom: none;
+.rowlike {
+  display: table-row;
 }
 
-td {
-  word-wrap: break-word;
-  text-align: center
+.celllike {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-#lefttopcell {
-  width: 25%;
-  border-right: 1px solid black;
-}
-
-#righttopcell {
-  border-bottom: none;
-}
-
-#logo {
-  max-width: 40%;
+img {
+  display: block;
+  margin: 0 auto;
 }
 
 #happyface {
   max-width: 40%;
 }
 
+.boxed {
+  border: 1px solid black;
+}
+
 #automatethis {
-  border-top: none;
-  width: 75%;
-  font-size:350%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 300%;
 }
 
-#provide {
-  padding: 5%;
-  text-align: left;
+ul:before {
+  content: '';
+  display: block;
+  height: 100%;
+  vertical-align: middle;
 }
 
-input {
- text-align: center;
+ul, .madlib {
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-#madlib {
-  padding: 5%;
-  text-align: left;
-}
-
-span {
-  text-decoration: underline;
-}
-
-#button {
-  text-align: right;
+li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 20px 0;
 }
 
 button {
-  margin: 20px;
+  float: right;
+  clear: both;
+}
+
+input {
+  text-align: center;
+  margin: 0 10px;
 }
