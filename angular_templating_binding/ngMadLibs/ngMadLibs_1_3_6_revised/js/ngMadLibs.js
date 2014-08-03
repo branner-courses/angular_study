@@ -42,13 +42,4 @@ angular.module('ngMadLibs', []).
       $scope.initialize_userReplmnts();
     };
 
-    $scope.validate = function() {
-      for (var i=0 ; i<$scope.userReplmnts.length ; i++) {
-        if ($scope.userReplmnts[i].$pristine) {
-          alert($scope.item + '" must be changed.');
-          return false;
-        }
-      }
-      return true;
-    };
 });
