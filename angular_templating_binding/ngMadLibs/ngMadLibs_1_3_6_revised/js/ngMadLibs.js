@@ -12,7 +12,8 @@ angular.module('ngMadLibs', []).
       {name: 'Huge_number', placeholder: 'Huge number', type:'number'}, 
       {name: 'Tedious_task', placeholder: 'Tedious task', type:'text'}, 
       {name: 'Useless_skill', placeholder: 'Useless skill', type:'text'}, 
-      {name: 'Adjective', placeholder: 'Adjective', type:'text'}];
+      {name: 'Adjective', placeholder: 'Adjective', type:'text'}
+    ];
 
     $scope.pronouns = {
       unknown: {
@@ -27,7 +28,8 @@ angular.module('ngMadLibs', []).
     };
 
     $scope.initialize_userReplmnts = function() {
-      $scope.userReplmnts = $scope.origReplmnts.slice();
+      $scope.userReplmnts = JSON.parse(JSON.stringify($scope.origReplmnts));
+      alert($scope.origReplmnts[5].name);
       $scope.userInput = true;
     };
 
