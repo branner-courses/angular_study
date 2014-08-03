@@ -54,7 +54,8 @@
           <button 
                   ng-show="userInput" 
                   ng-click="generateMadLib()" 
-                  ng-disabled="userInputForm.$invalid"
+                  ng-disabled="userInputForm.$invalid ||
+                               ng-repeat='item in userReplmnts' item.name.$pristine"
                   type="submit">
             Generate My MadLib!
           </button>

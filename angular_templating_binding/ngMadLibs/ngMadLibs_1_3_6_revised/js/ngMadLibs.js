@@ -34,12 +34,7 @@ angular.module('ngMadLibs', []).
     $scope.initialize_userReplmnts();
 
     $scope.generateMadLib = function() {
-      if (!$scope.chosenPronoun) {
-        $scope.chosenPronoun = $scope.pronouns.unknown;
-      }
-      if ($scope.validate($scope.userReplments)) {
-        $scope.userInput = false; 
-      }
+      $scope.userInput = false; 
     };
 
     $scope.resetMadLib = function() {
@@ -56,29 +51,3 @@ angular.module('ngMadLibs', []).
       return true;
     };
 });
-      /*
-      console.log('$scope.userReplmnts: ' + $scope.userReplmnts);
-      // userReplmnts[5] must be number
-      if (isNaN($scope.userReplmnts[5])) {
-        alert('"' + $scope.origReplmnts[5] + '" must be a number.');
-        // Restore original placeholder.
-        $scope.userReplmnts[5] = $scope.origReplmnts[5];
-        return false;
-      }
-      // no element of $scope.userReplmnts can be the same as origReplmnts
-      else {
-        for (var i=0 ; i<$scope.origReplmnts.length ; i++) {
-          console.log(i, $scope.userReplmnts[i]);
-          if ($scope.userReplmnts[i] === $scope.origReplmnts[i]) {
-            alert('"' + $scope.origReplmnts[i] + '" must be changed.');
-            return false;
-          }
-          else if (!$scope.userReplmnts[i]) {
-            alert('"' + $scope.origReplmnts[i] + '" seems to be empty.');
-            // Restore original placeholder.
-            $scope.userReplmnts[i] = $scope.origReplmnts[i];
-            return false;
-          }
-        }
-      return true; */
-
