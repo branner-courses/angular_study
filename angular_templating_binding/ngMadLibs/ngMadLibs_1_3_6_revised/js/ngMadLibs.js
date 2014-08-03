@@ -4,7 +4,7 @@
 angular.module('ngMadLibs', []).
   controller('Replacements', function($scope) {
     $scope.origReplmnts = [
-      {name: 'Female_name', placeholder: 'Female name', type:'text'}, 
+      {name: 'Given_name', placeholder: 'Given name', type:'text'}, 
       {name: 'Dirty_task', placeholder: 'Dirty task', type:'text'}, 
       {name: 'Obnoxious_celebrity', placeholder: 'Obnoxious celebrity', type:'text'}, 
       {name: 'Job_title', placeholder: 'Job title', type:'text'},   
@@ -14,29 +14,52 @@ angular.module('ngMadLibs', []).
       {name: 'Useless_skill', placeholder: 'Useless skill', type:'text'}, 
       {name: 'Adjective', placeholder: 'Adjective', type:'text'}];
 
-    $scope.reset_userReplmnts = function() {
+    $scope.pronouns = {
+      unknown: {
+        subject: 'they', possessive: 'their', object: 'them'
+      },
+      male: {
+        subject: 'he', possessive: 'his', object: 'him'
+      },
+      female: {
+        subject: 'she', possessive: 'her', object: 'her'
+      },
+    };
+    $scope.pronoun = $scope.pronouns.unknown;
+
+    $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = $scope.origReplmnts.slice();
+      $scope.submitted = false;
     };
 
     $scope.userInput = true;
-    $scope.reset_userReplmnts();
-
-    $scope.toggle = function() {
-      $scope.userInput = !$scope.userInput;
-    };
+    $scope.initialize_userReplmnts();
 
     $scope.generateMadLib = function() {
+      $scope.submitted = true;
       if ($scope.validate($scope.userReplments)) {
-        $scope.toggle();
+        $scope.userInput = false; 
+        alert($scope.userReplmnts[1].name);
       }
     };
 
     $scope.resetMadLib = function() {
-      $scope.reset_userReplmnts();
-      $scope.toggle();
+      $scope.initialize_userReplmnts();
+      $scope.userInput = true; 
     };
 
     $scope.validate = function() {
+      alert('here');
+      for (var i=0 ; i<$scope.userReplmnts.length ; i++) {
+        if ($scope.userReplmnts[i].$pristine) {
+          alert($scope.item + '" must be changed.');
+          return false;
+        }
+      }
+      return true;
+    };
+});
+      /*
       console.log('$scope.userReplmnts: ' + $scope.userReplmnts);
       // userReplmnts[5] must be number
       if (isNaN($scope.userReplmnts[5])) {
@@ -60,8 +83,5 @@ angular.module('ngMadLibs', []).
             return false;
           }
         }
-      return true;
-      }
-    };
-  });
+      return true; */
 

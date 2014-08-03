@@ -31,7 +31,7 @@ img {
 }
 
 #happyface {
-  width: 40%;
+  max-width: 40%;
 }
 
 .boxed {
@@ -51,8 +51,8 @@ ul:before {
   vertical-align: middle;
 }
 
-ul {
-  display: block;
+ul, .madlib {
+  position: relative;
   max-width: 70%;
   margin: 0 auto;
   padding: 10px;
