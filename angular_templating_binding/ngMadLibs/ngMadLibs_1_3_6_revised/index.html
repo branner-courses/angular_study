@@ -32,7 +32,7 @@
         <div id="provide" class="celllike">
           <ul>
             <li>
-            <input ng-repeat="item in origReplmnts"
+            <input ng-repeat="item in userReplmnts"
                    type="{{ item.type }}" 
                    ng-model=item.name
                    placeholder="{{ item.placeholder }}" 
@@ -47,12 +47,13 @@
           <label ng-repeat="(pronoun, i) in pronouns">
             {{ pronoun }}
             <input type="radio" 
-            ng-model="$parent.chosenPronoun"
-            ng-value=pronoun
-            checked="pronouns[chosenPronoun].checked"
-            required />
+                   ng-model="$parent.chosenPronoun"
+                   ng-value=pronoun
+                   required />
           </label>
-          <button ng-show="userInput" ng-click="generateMadLib()" 
+          <button 
+                  ng-show="userInput" 
+                  ng-click="generateMadLib()" 
                   ng-disabled="userInputForm.$invalid"
                   type="submit">
             Generate My MadLib!
