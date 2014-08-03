@@ -29,7 +29,6 @@ angular.module('ngMadLibs', []).
 
     $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = JSON.parse(JSON.stringify($scope.origReplmnts));
-      alert($scope.origReplmnts[5].name);
       $scope.userInput = true;
     };
 
