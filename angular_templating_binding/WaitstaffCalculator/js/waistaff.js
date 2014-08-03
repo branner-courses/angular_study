@@ -1,5 +1,5 @@
 // David Prager Branner
-// 20140804
+// 20140803
 
 angular.module('waitStaff', []).
  controller('Calculator', function($scope) {
