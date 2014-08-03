@@ -21,7 +21,7 @@ angular.module('waitStaff', []).
     $scope.custmrTotal = $scope.custmrSubtotal + $scope.custmrTip;
 
     // My earnings info
-    $scope.tipTotal = $scope.custmrTip + $scope.tipTotal;
+    $scope.tipTotal += $scope.custmrTip;
     $scope.mealCount++;
     $scope.avgTip = $scope.tipTotal / $scope.mealCount;
   };
