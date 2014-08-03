@@ -16,27 +16,28 @@ angular.module('ngMadLibs', []).
 
     $scope.pronouns = {
       unknown: {
-        subject: 'they', possessive: 'their', object: 'them'
+        subject: 'they', possessive: 'their', object: 'them', checked: 'checked'
       },
       male: {
-        subject: 'he', possessive: 'his', object: 'him'
+        subject: 'he', possessive: 'his', object: 'him', checked: 'false'
       },
       female: {
-        subject: 'she', possessive: 'her', object: 'her'
+        subject: 'she', possessive: 'her', object: 'her', checked: 'false'
       },
     };
-    $scope.chosenPronoun = $scope.pronouns.unknown;
 
     $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = $scope.origReplmnts.slice();
-      $scope.submitted = false;
+      $scope.userInput = true;
     };
 
     $scope.userInput = true;
     $scope.initialize_userReplmnts();
 
     $scope.generateMadLib = function() {
-      $scope.submitted = true;
+      if (!$scope.chosenPronoun) {
+        $scope.chosenPronoun = $scope.pronouns.unknown;
+      }
       if ($scope.validate($scope.userReplments)) {
         $scope.userInput = false; 
       }
@@ -44,7 +45,6 @@ angular.module('ngMadLibs', []).
 
     $scope.resetMadLib = function() {
       $scope.initialize_userReplmnts();
-      $scope.userInput = true; 
     };
 
     $scope.validate = function() {
