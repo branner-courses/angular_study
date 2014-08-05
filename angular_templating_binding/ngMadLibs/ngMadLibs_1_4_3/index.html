@@ -1,0 +1,109 @@
+<!-- David Prager Branner -->
+<!-- 20140802 -->
+
+<!doctype html>
+<html lang="en" ng-app="ngMadLibs">
+<head>
+  <meta charset="UTF-8">
+  <title>ngMadLibs</title>
+  <link rel="stylesheet" href="css/ngMadLibs.css">
+</head>
+
+<body ng-controller="Replacements" ng-cloak class="ng-cloak">
+  <header class="container">
+    <div class="rowlike">
+      <div id="face" class="celllike boxed">
+        <img src="images/mad-lib-happy-face.png" 
+             alt="ngMadLibs Smiley face" id="happyface">
+      </div>
+      <div id="logo" class="celllike boxed">
+        <p>
+          <img src="images/ng-mad-libs-logo.png" 
+               alt="ngMadLibs Logo">
+        </p>
+        <p id="automatethis">Automate This!</p>
+      </div>
+    </div>
+  </header>
+
+  <section ng-show="userInput" class="container boxed">
+    <form name="userInputForm" novalidate>
+      <div class="rowlike">
+        <div id="provide" class="celllike">
+          <ul>
+            <li>
+            <input ng-repeat="item in userReplmnts"
+                   type="{{ item.type }}" 
+                   ng-model=item.name
+                   placeholder="{{ item.placeholder }}" 
+                   required />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rowlike">
+        <div class="celllike button">
+          <label ng-repeat="(pronoun, i) in pronouns">
+            {{ pronoun }}
+            <input type="radio" 
+                   ng-model="$parent.chosenPronoun"
+                   ng-value=pronoun
+                   required />
+          </label>
+          <button 
+                  ng-show="userInput" 
+                  ng-click="generateMadLib()" 
+                  ng-disabled="userInputForm.$invalid"
+                  type="submit">
+            Generate My MadLib!
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section ng-show="!userInput" class="container boxed">
+    <div class="rowlike">
+      <div class="celllike">
+        <p class="madlib">
+          <span>{{ userReplmnts[0].name }}</span> was a 
+          <span>{{ userReplmnts[3].name }}</span> who loved technology. Although 
+          <span>{{ pronouns[chosenPronoun].subject }}</span> loved parts of 
+          <span>{{ pronouns[chosenPronoun].possessive }}</span> job, 
+          <span>{{ pronouns[chosenPronoun].subject }}</span> absolutely hated 
+          <span>{{ userReplmnts[6].name }}</span> and 
+          <span>{{ userReplmnts[1].name }}</span>. So 
+          <span>{{ userReplmnts[0].name }}</span> met with 
+          <span>{{ pronouns[chosenPronoun].possessive }}</span> life mentor 
+          <span>{{ userReplmnts[4].name }}</span> who told 
+          <span>{{ pronouns[chosenPronoun].object }}</span> to learn how to 
+          <span>{{ userReplmnts[7].name }}</span> with Thinkful. Thinkful didn't offer a course on 
+          <span>{{ userReplmnts[7].name }}</span> so 
+          <span>{{ pronouns[chosenPronoun].subject }}</span> studied programming instead.
+        </p>
+        <p class="madlib">
+          What a great decision! With 
+          <span>{{ pronouns[chosenPronoun].possessive }}</span> new skills, 
+          <span>{{ userReplmnts[0].name }}</span> built a(n) 
+          <span>{{ userReplmnts[8].name }}</span> robot named 
+          <span>{{ userReplmnts[2].name }}</span> that not only loved 
+          <span>{{ userReplmnts[1].name }}</span> but did it 
+          <span>{{ userReplmnts[5].name }}</span> times faster. 
+        </p>
+      </div>
+    </div>
+
+    <div class="rowlike">
+      <div class="celllike button">
+        <button ng-show="!userInput" ng-click="resetMadLib()" type="button">
+          Start Over
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/angular.js"></script>
+  <script src="js/ngMadLibs.js"></script>
+</body>
+</html>
