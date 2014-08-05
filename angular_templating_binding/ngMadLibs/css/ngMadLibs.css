@@ -1,6 +1,5 @@
 /* David Prager Branner */
-/* 20140802 */
-
+/* 20140805 */
 
 .container {
   width: 75%;
@@ -9,13 +8,15 @@
   margin-right: auto ;
 }
 
-
+/* This rule was added to center div content. 
+ * But it seems to ruin the left border.
 .rowlike:before {
   content: '';
   display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
+*/
 
 .rowlike {
   display: table-row;
@@ -36,6 +37,7 @@ img {
 }
 
 .boxed {
+  box-sizing: border-box;
   border: 1px solid black;
 }
 
@@ -73,4 +75,8 @@ button {
 input {
   text-align: center;
   margin: 0 10px;
+}
+
+#pronounAndSubmit {
+  padding: 20px;
 }

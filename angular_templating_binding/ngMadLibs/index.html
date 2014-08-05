@@ -1,5 +1,5 @@
 <!-- David Prager Branner -->
-<!-- 20140802 -->
+<!-- 20140805 -->
 
 <!doctype html>
 <html lang="en" ng-app="ngMadLibs">
@@ -36,6 +36,7 @@
                    type="{{ item.type }}" 
                    ng-model=item.name
                    placeholder="{{ item.placeholder }}" 
+                   autocompete="off"
                    required />
             </li>
           </ul>
@@ -43,21 +44,21 @@
       </div>
 
       <div class="rowlike">
-        <div class="celllike button">
-          <label ng-repeat="(pronoun, i) in pronouns">
-            {{ pronoun }}
-            <input type="radio" 
-                   ng-model="$parent.chosenPronoun"
-                   ng-value=pronoun
-                   required />
-          </label>
-          <button 
-                  ng-show="userInput" 
-                  ng-click="generateMadLib()" 
-                  ng-disabled="userInputForm.$invalid"
-                  type="submit">
-            Generate My MadLib!
-          </button>
+        <div id="pronounAndSubmit" class="celllike button">
+            <label ng-repeat="(pronoun, i) in pronouns">
+              {{ pronoun }}
+              <input type="radio" 
+                     ng-model="$parent.chosenPronoun"
+                     ng-value=pronoun
+                     required />
+            </label>
+            <button 
+                    ng-show="userInput" 
+                    ng-click="generateMadLib()" 
+                    ng-disabled="userInputForm.$invalid"
+                    type="submit">
+              Generate My MadLib!
+            </button>
         </div>
       </div>
     </form>
