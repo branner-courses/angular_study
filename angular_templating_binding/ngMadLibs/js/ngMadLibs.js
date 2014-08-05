@@ -4,15 +4,15 @@
 angular.module('ngMadLibs', []).
   controller('Replacements', function($scope) {
     $scope.origReplmnts = [
-      {name: 'Given_name', placeholder: 'Given name', type:'text'}, 
-      {name: 'Dirty_task', placeholder: 'Dirty task', type:'text'}, 
-      {name: 'Obnoxious_celebrity', placeholder: 'Obnoxious celebrity', type:'text'}, 
-      {name: 'Job_title', placeholder: 'Job title', type:'text'},   
-      {name: 'Celebrity', placeholder: 'Celebrity', type:'text'}, 
-      {name: 'Huge_number', placeholder: 'Huge number', type:'number'}, 
-      {name: 'Tedious_task', placeholder: 'Tedious task', type:'text'}, 
-      {name: 'Useless_skill', placeholder: 'Useless skill', type:'text'}, 
-      {name: 'Adjective', placeholder: 'Adjective', type:'text'}
+      {name: '', placeholder: 'Given name', type:'text'}, 
+      {name: '', placeholder: 'Dirty task', type:'text'}, 
+      {name: '', placeholder: 'Obnoxious celebrity', type:'text'}, 
+      {name: '', placeholder: 'Job title', type:'text'},   
+      {name: '', placeholder: 'Celebrity', type:'text'}, 
+      {name: '', placeholder: 'Huge number', type:'number'}, 
+      {name: '', placeholder: 'Tedious task', type:'text'}, 
+      {name: '', placeholder: 'Useless skill', type:'text'}, 
+      {name: '', placeholder: 'Adjective', type:'text'}
     ];
 
     $scope.pronouns = {
