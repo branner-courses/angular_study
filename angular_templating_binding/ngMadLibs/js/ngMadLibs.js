@@ -1,5 +1,5 @@
 // David Prager Branner
-// 20140802
+// 20140805
 
 angular.module('ngMadLibs', []).
   controller('Replacements', function($scope) {
@@ -29,6 +29,7 @@ angular.module('ngMadLibs', []).
 
     $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = JSON.parse(JSON.stringify($scope.origReplmnts));
+      $scope.chosenPronoun = '';
       $scope.userInput = true;
     };
 
