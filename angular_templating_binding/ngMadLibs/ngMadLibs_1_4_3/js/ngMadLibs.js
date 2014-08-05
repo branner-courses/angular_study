@@ -29,6 +29,7 @@ angular.module('ngMadLibs', []).
 
     $scope.initialize_userReplmnts = function() {
       $scope.userReplmnts = JSON.parse(JSON.stringify($scope.origReplmnts));
+      $scope.chosenPronoun = '';
       $scope.userInput = true;
     };
 
