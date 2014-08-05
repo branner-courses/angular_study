@@ -48,13 +48,6 @@ img {
   font-size: 300%;
 }
 
-ul:before {
-  content: '';
-  display: block;
-  height: 100%;
-  vertical-align: middle;
-}
-
 ul, .madlib {
   position: relative;
   max-width: 70%;
