@@ -1,7 +1,7 @@
 // David Prager Branner
 // 20140805
 
-angular.module('ngMadLibs', ['']).
+angular.module('ngMadLibs', ['ngAnimate']).
   controller('Replacements', function($scope) {
     $scope.origReplmnts = [
       {name: '', placeholder: 'Given name', 

@@ -81,3 +81,23 @@ input {
   padding: 20px;
 }
 
+.animate-show.ng-hide-remove {
+  -webkit-animation: all 1.5s linear;
+  animation: all 1.5s linear;
+  display: block !important;
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add {
+  opacity: 0;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  opacity: 0;
+}
+
+
