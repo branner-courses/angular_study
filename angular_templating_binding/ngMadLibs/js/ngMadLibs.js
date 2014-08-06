@@ -1,18 +1,27 @@
 // David Prager Branner
 // 20140805
 
-angular.module('ngMadLibs', []).
+angular.module('ngMadLibs', ['']).
   controller('Replacements', function($scope) {
     $scope.origReplmnts = [
-      {name: '', placeholder: 'Given name', type:'text'}, 
-      {name: '', placeholder: 'Dirty task', type:'text'}, 
-      {name: '', placeholder: 'Obnoxious celebrity', type:'text'}, 
-      {name: '', placeholder: 'Job title', type:'text'},   
-      {name: '', placeholder: 'Celebrity', type:'text'}, 
-      {name: '', placeholder: 'Huge number', type:'number'}, 
-      {name: '', placeholder: 'Tedious task', type:'text'}, 
-      {name: '', placeholder: 'Useless skill', type:'text'}, 
-      {name: '', placeholder: 'Adjective', type:'text'}
+      {name: '', placeholder: 'Given name', 
+                 temp: '{{Given_name }}', type:'text'}, 
+      {name: '', placeholder: 'Dirty task', 
+                 temp: '{{Dirty_task }}', type:'text'}, 
+      {name: '', placeholder: 'Obnoxious celebrity', 
+                 temp: '{{Obnoxious_celebrity }}', type:'text'}, 
+      {name: '', placeholder: 'Job title', 
+                 temp: '{{Job_title }}', type:'text'},   
+      {name: '', placeholder: 'Celebrity', 
+                 temp: '{{Celebrity }}', type:'text'}, 
+      {name: '', placeholder: 'Huge number', 
+                 temp: '{{Huge_number }}', type:'number'}, 
+      {name: '', placeholder: 'Tedious task', 
+                 temp: '{{Tedious_task }}', type:'text'}, 
+      {name: '', placeholder: 'Useless skill', 
+                 temp: '{{Useless_skill }}', type:'text'}, 
+      {name: '', placeholder: 'Adjective', 
+                 temp: '{{Adjective }}', type:'text'}
     ];
 
     $scope.pronouns = {
