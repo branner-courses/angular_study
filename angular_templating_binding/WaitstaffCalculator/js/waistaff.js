@@ -28,7 +28,8 @@ angular.module('waitStaff', []).
 
   $scope.cancel = function() {
     $scope.baseMealPrice = '';
-    $scope.taxRate = '';
+//    Once taxRate has been added, leave it in.
+//    $scope.taxRate = '';
     $scope.tipPc = '';
   };
 
